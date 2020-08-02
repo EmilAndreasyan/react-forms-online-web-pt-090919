@@ -8,28 +8,25 @@ export default class ParentComponent extends React.Component {
     lastName: "",
   }
   
-  // handleFirstNameChange = event => {
-  //   this.setState({
-  //     firstName: event.target.value
-  //   })
-  // }
+handleFirstNameChange = event => {
+  this.setState({firstName: event.target.value})
+}
   
-  // handleLastNameChange = event => {
-  //   this.setState({
-  //     lastName: event.target.value
-  //   })
-  // }
-  
-  handleChange = event => {
+  handleLastNameChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      lastName: event.target.value
     })
   }
   
+  // handleChange = event => {
+  //   this.setState({
+  //     [event.target.name]: event.target.value
+  //   })
+  // }
+  
   render() {
     return (
-    <Form formData={this.state} handleChange={this.handleChange}
-    />
+    <Form formData={this.state} handleFirstNameChange={this.handleFirstNameChange} handleLastNameChange={this.handleLastNameChange}/>
     <DispalyData formData={this.state}/>
     )
   }
