@@ -8,7 +8,6 @@ export default class ParentComponent extends React.Component {
     lastName: "",
   }
   
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -17,7 +16,7 @@ export default class ParentComponent extends React.Component {
   
   render() {
     return (
-    <Form formData={this.state} handleFirstNameChange={this.handleFirstNameChange} handleLastNameChange={this.handleLastNameChange}/>
+    <Form formData={this.state} handleChange={this.handleChange}/>
     <DispalyData formData={this.state}/>
     )
   }
